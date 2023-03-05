@@ -19,3 +19,5 @@ mybatis-plus:
     db-config:
 #      主键雪花算法
       id-type: ASSIGN_ID
+reggie:
+  path: D:\

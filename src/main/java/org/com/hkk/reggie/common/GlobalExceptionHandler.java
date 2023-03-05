@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.SQLClientInfoException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 //全局的异常处理  ——> AOP
@@ -29,4 +28,9 @@ public class GlobalExceptionHandler {
        return R.error("未知错误");
     }
 
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException exception){
+
+        return R.error(exception.getMessage());
+    }
 }
